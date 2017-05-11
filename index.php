@@ -20,13 +20,13 @@
           </div>
           <div class="form-group">
             <label for="subject">Subject</label>
-            <input class="form-control" type="text" name="subject" placeholder="Enter a Subject">
+            <input class="form-control" type="text" name="subject" placeholder="Enter a Subject" id="subject">
           </div>
           <div class="form-group">
             <label for="content">Content:</label>
             <textarea style="resize: none;" class="form-control" name="content" rows="8" cols="80" placeholder="Enter your content"></textarea>
           </div>
-          <button class="btn btn-primary" type="submit" name="submit">Submit</button>
+          <button class="btn btn-primary" id="submit" type="submit" name="submit">Submit</button>
         </form>
     </div>
 
@@ -35,5 +35,6 @@
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
