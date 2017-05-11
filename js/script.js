@@ -29,7 +29,7 @@ $(document).ready(
 
     if(err !== ""){
       $(".error").html(
-        '<div class="alert alert-danger"><p><strong>Please fix these errors to submit the contact form.</strong><br/>' + err +'</p></div>'
+        '<div class="alert alert-danger"><p><strong>Please fix these error(s) to submit the contact form.</strong><br/>' + err +'</p></div>'
       );
       e.preventDefault();
     }

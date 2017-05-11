@@ -1,9 +1,8 @@
 <?php
 
-print_r($_POST);
-
   if($_POST){
     $err = "";
+    $messageSent = "";
     // Checks to make sure there is a $_POST variable of email
     if(!$_POST['userEmail']){
       $err .= 'An email address is required!<br/>';
@@ -25,7 +24,26 @@ print_r($_POST);
     //Creates div to display if there is an error on the serverside
     if($err !== ""){
 
-      $err = '<div class="alert alert-danger"><p><strong>Please fix these errors to submit the contact form.</strong><br/>'.$err.'</p></div>';
+      $err = '<div class="alert alert-danger"><p><strong>Please fix these error(s) to submit the contact form.</strong><br/>'.$err.'</p></div>';
+
+    } else {
+
+      $mailTo = "";
+
+      $subject = $_POST['subject'];
+
+      $body = $_POST['content'];
+
+      $header = "From : ".$_POST['userEmail'];
+
+      if(mail($mailTo, $subject, $body, $header)){
+        // Displays success message if the message is able to be sent
+        $messageSent = '<div class="alert alert-success"><p>Message was sent successfully, we\'ll get back to you as soon as we can.</p></div>';
+
+      } else {
+        // Display error message if message was unable to get sent
+        $err = '<div class="alert alert-danger"><p>Message was unable to be sent please try again.</p></div>';
+      }
 
     }
 
@@ -50,7 +68,7 @@ print_r($_POST);
 
         <div class="error">
           <!-- ERRORS WHEN SUBMITTING IF SOMETHING IS EMPTY -->
-          <?php echo $err; ?>
+          <?php echo $err.$messageSent; ?>
         </div>
 
         <form method="POST">
