@@ -13,6 +13,10 @@
 
         <h1>Contact me!</h1>
 
+        <div class="error">
+          <!-- ERRORS WHEN SUBMITTING IF SOMETHING IS EMPTY -->
+        </div>
+
         <form class="" action="index.html" method="post">
           <div class="form-group">
             <label for="userEmail">Email Address</label>
@@ -24,7 +28,7 @@
           </div>
           <div class="form-group">
             <label for="content">Content:</label>
-            <textarea style="resize: none;" class="form-control" name="content" rows="8" cols="80" placeholder="Enter your content"></textarea>
+            <textarea style="resize: none;" class="form-control" name="content" rows="8" cols="80" placeholder="Enter your content" id="content"></textarea>
           </div>
           <button class="btn btn-primary" id="submit" type="submit" name="submit">Submit</button>
         </form>
