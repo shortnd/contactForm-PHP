@@ -28,7 +28,7 @@
 
     } else {
 
-      $mailTo = "";
+      $mailTo = "collin.oconnell@shortnd.design";
 
       $subject = $_POST['subject'];
 
