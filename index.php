@@ -34,7 +34,7 @@
 
       $body = $_POST['content'];
 
-      $header = $_POST['userEmail'];
+      $header = "From ".$_POST['userEmail'];
 
       if(mail($mailTo, $subject, $body, $header)){
         // Displays success message if the message is able to be sent
