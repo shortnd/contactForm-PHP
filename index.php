@@ -2,6 +2,35 @@
 
 print_r($_POST);
 
+  if($_POST){
+    $err = "";
+    // Checks to make sure there is a $_POST variable of email
+    if(!$_POST['userEmail']){
+      $err .= 'An email address is required!<br/>';
+    }
+    // Checks to make sure there is a $_POST variable of subject
+    if(!$_POST['subject']){
+      $err .= 'Please enter a Subject line.<br/>';
+    }
+    //Checks to make sure there is a $_POST variable of content
+    if(!$_POST['content']){
+      $err .= 'Please enter some content.<br/>';
+    }
+
+    //Validate email to make sure it is a valid email address
+    if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
+      $err .= $_POST['email'].' is not a valid email address';
+    }
+
+    //Creates div to display if there is an error on the serverside
+    if($err !== ""){
+
+      $err = '<div class="alert alert-danger"><p><strong>Please fix these errors to submit the contact form.</strong><br/>'.$err.'</p></div>';
+
+    }
+
+  }
+
 ?>
 
 <!DOCTYPE html>
@@ -21,6 +50,7 @@ print_r($_POST);
 
         <div class="error">
           <!-- ERRORS WHEN SUBMITTING IF SOMETHING IS EMPTY -->
+          <?php echo $err; ?>
         </div>
 
         <form method="POST">
@@ -36,7 +66,7 @@ print_r($_POST);
             <label for="content">Content:</label>
             <textarea style="resize: none;" class="form-control" name="content" rows="8" cols="80" placeholder="Enter your content" id="content"></textarea>
           </div>
-          <button class="btn btn-primary" id="submit" type="submit" name="submit">Submit</button>
+          <button class="float-right btn btn-primary" id="submit" type="submit">Submit</button>
         </form>
     </div>
 
