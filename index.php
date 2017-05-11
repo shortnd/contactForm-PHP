@@ -23,7 +23,7 @@ print_r($_POST);
           <!-- ERRORS WHEN SUBMITTING IF SOMETHING IS EMPTY -->
         </div>
 
-        <form class="" action="index.html" method="post">
+        <form method="POST">
           <div class="form-group">
             <label for="userEmail">Email Address</label>
             <input class="form-control" type="email" name="userEmail" id="userEmail" placeholder="Enter your Email">
