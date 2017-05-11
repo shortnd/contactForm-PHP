@@ -18,6 +18,15 @@
             <label for="userEmail">Email Address</label>
             <input class="form-control" type="email" name="userEmail" id="userEmail" placeholder="Enter your Email">
           </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input class="form-control" type="text" name="subject" placeholder="Enter a Subject">
+          </div>
+          <div class="form-group">
+            <label for="content">Content:</label>
+            <textarea style="resize: none;" class="form-control" name="content" rows="8" cols="80" placeholder="Enter your content"></textarea>
+          </div>
+          <button class="btn btn-primary" type="submit" name="submit">Submit</button>
         </form>
     </div>
 
