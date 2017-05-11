@@ -19,7 +19,7 @@ $(document).ready(
     if($("#userEmail").val() === ""){
 
       err += "Enter an Email address";
-      
+
     }
 
     if(err !== ""){
